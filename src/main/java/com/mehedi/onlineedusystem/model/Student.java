@@ -11,19 +11,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Profile {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
-    private String student_Id;
-    private String email;
-    private String description;
+    private String studentName;
+    private String studentRoll;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Comments> comments;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Posts> posts;
-
-
+    private List<Course> courses;
 }
