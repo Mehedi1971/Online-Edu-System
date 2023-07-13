@@ -1,29 +1,26 @@
 package com.mehedi.onlineedusystem.controller;
 
 import com.mehedi.onlineedusystem.model.Course;
-import com.mehedi.onlineedusystem.model.Profile;
-import com.mehedi.onlineedusystem.repository.CourseRepository;
+import com.mehedi.onlineedusystem.service.CourseService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/course")
 public class CourseController {
-    private final CourseRepository courseRepository;
+    private final CourseService courseService;
 
-    @PostMapping("/course")
+    @PostMapping("/save-course")
     public Course saveAll(@RequestBody Course course){
-        return courseRepository.save(course);
+        return courseService.savecourse(course);
     }
 
-    @GetMapping("/course")
+    @GetMapping("/all-courses")
     public List<Course> getAll(){
-        return courseRepository.findAll();
+        return courseService.getAllCourse();
     }
 
 }
