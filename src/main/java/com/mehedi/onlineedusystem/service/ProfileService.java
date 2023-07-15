@@ -1,11 +1,11 @@
 package com.mehedi.onlineedusystem.service;
 
-import com.mehedi.onlineedusystem.model.Profile;
+import com.mehedi.onlineedusystem.dto.ProfileDto;
 
 import java.util.List;
 
 public interface ProfileService {
-    Profile saveAll(Profile profile);
+    ProfileDto saveAll(ProfileDto profileDto);
 
-    List<Profile> getAll();
+    List<ProfileDto> getAll();
 }

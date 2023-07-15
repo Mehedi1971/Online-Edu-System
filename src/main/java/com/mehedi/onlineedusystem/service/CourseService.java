@@ -1,11 +1,13 @@
 package com.mehedi.onlineedusystem.service;
 
-import com.mehedi.onlineedusystem.model.Course;
+import com.mehedi.onlineedusystem.dto.CourseDto;
 
 import java.util.List;
 
 public interface CourseService {
-    Course savecourse(Course course);
+    CourseDto savecourse(CourseDto courseDto);
 
-    List<Course> getAllCourse();
+    List<CourseDto> getAllCourse();
+
+
 }

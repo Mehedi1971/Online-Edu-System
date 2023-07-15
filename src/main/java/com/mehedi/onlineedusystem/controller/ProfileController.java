@@ -1,5 +1,6 @@
 package com.mehedi.onlineedusystem.controller;
 
+import com.mehedi.onlineedusystem.dto.ProfileDto;
 import com.mehedi.onlineedusystem.model.Profile;
 import com.mehedi.onlineedusystem.repository.ProfileRepository;
 import com.mehedi.onlineedusystem.service.ProfileService;
@@ -15,12 +16,12 @@ public class ProfileController {
     private final ProfileService profileService;
 
     @PostMapping("/save-profile")
-    public Profile saveAll(@RequestBody Profile profile){
-        return profileService.saveAll(profile);
+    public ProfileDto saveAll(@RequestBody ProfileDto profileDto){
+        return profileService.saveAll(profileDto);
     }
 
     @GetMapping("/all-profiles")
-    public List<Profile> getAll(){
+    public List<ProfileDto> getAll(){
         return profileService.getAll();
     }
 
